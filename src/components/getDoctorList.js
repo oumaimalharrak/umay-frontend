@@ -14,3 +14,4 @@ export const UseGetAllDoctors =()=>{
     console.log(data)
     return {data, isLoading};
 }
+

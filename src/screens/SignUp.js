@@ -5,20 +5,28 @@ import Custumbutton from '../components/Custumbutton';
 import { ScrollView } from 'react-native';
 import SocialSignUpBtn from '../components/SocialSignUpBtn';
 import { useNavigation } from '@react-navigation/native';
+import axios from 'axios';
+
 
 const SignUpScreen = () => {
-  
-
   const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordRepeat, setPasswordRepeat] = useState('')
 
   const navigation =useNavigation();
- 
-  const onRegisterPress= ()=>{
-    navigation.navigate('calendar')
-  }
+
+  const onRegisterPress= async (userName, email, password)=>{
+    // const dataHandled= JSON.stringify({  userName,
+    //   email,
+    //   password})
+    //   const response = await axios.post('http://10.0.2.2:5000/api/v1/users/signup', dataHandled);
+    //   console.log('data',data)
+    //   return  response.data;
+     navigation.navigate('calendar')
+  } 
+   
+  
   const onTermsPressed=()=>{
     console.warn('pressed pwd')
   }
