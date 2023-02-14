@@ -12,6 +12,7 @@ import Index from '../screens/Index';
 import CalendarScreen from '../screens/CalendarScreen';
 import TabNav from './TabNav';
 import DoctorList from '../screens/doctor_appt/DoctorList';
+import Bookingscreen from '../screens/doctor_appt/Bookingscreen'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 
@@ -31,9 +32,9 @@ const Navigation = () => {
         {/* <Stack.Screen name="Confirmation" component={ConfirmationScreen} /> */}
         {/* <Stack.Screen name='ForgotPWD' component={ForgotPwdScreen}/> */}
         {/* <Stack.Screen name='newPWD' component={NewPwdScreen}/>  */}
-        {/* <Stack.Screen name='calendar' component={TabNav}  */}
-         {/* /> */}
+        {/* <Stack.Screen name='calendar' component={TabNav} />  */}
          <Stack.Screen name='doctorList' component={DoctorList}/>
+         <Stack.Screen name='bookingScreen' component={Bookingscreen}/>
  
       </Stack.Navigator>
     

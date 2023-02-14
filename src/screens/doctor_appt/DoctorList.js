@@ -9,17 +9,20 @@ import {
 import React, {useEffect, useState} from 'react';
 import {UseGetAllDoctors} from '../../components/getDoctorList';
 import DoctorItem from '../../components/DoctorItem';
-import docIcon from '../../assets/images/docIcon.jpg';
-import {Dropdown} from 'react-native-element-dropdown';
+import docIcon from '../../assets/images/doc.png';
 import {TextInput} from 'react-native-gesture-handler';
+import { useNavigation } from '@react-navigation/native';
+
 
 const DoctorList = () => {
+  const navigation =useNavigation();
+
   const {data, isLoading} = UseGetAllDoctors();
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredData, setFilteredData] = useState(data);
   const [selectedDoctorId, setSelectedDoctorId] = useState(null);
 
-  const handleDoctorPress = id => {
+  const handleDoctorPress = ({id, item}) => {
     console.log(id);
     setSelectedDoctorId(id);
   };
@@ -49,13 +52,12 @@ const DoctorList = () => {
           style={styles.searchBar}
           placeholder="Search a Doctor"
           placeholderTextColor="#3f5092"
-          // onChangeText={handleSearch}
+          onChangeText={handleSearch}
           value={searchTerm}
         />
         <Image
           source={require('../../assets/images/search.png')}
           style={styles.searchIcon}
-          onPress={handleSearch}
         />
       </View>
 
@@ -64,14 +66,19 @@ const DoctorList = () => {
           <Text>Loading...</Text>
         ) : data ? (
           <FlatList
-            data={filteredData}
+            data={data}
             renderItem={({item}) => (
               <DoctorItem
                 image={docIcon}
                 fullname={item.fullname}
                 speciality={item.speciality}
-                onPress={() => handleDoctorPress(item.id)}
+                fees={item.price}
+                onPress={() => {handleDoctorPress(item.id)
+                  navigation.navigate('bookingScreen', item)
+
+                }}
                 image2={require('../../assets/images/calendar.png')}
+
               />
             )}
             keyExtractor={item => item.id.toString()}

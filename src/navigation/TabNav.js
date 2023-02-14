@@ -17,9 +17,12 @@ const TabNav = () => {
     }} >
     <Tab.Screen name='calendarTab' component={CalendarScreen}
      screenOptions={{
-        tabBarIcon: ({color, size})=>{
-            <Ionicons name='home-outline' color={color} size={size} />
-        }
+        tabBarIcon: ({color, size})=>
+          (
+            <Ionicons name="settings-outline" color={color} size={size} />
+
+          )
+        
     }} />
     <Tab.Screen name='HomeTab' component={HomeScreen} />
 

@@ -1,46 +1,50 @@
 import {View, Text, TouchableOpacity, StyleSheet, Image} from 'react-native';
 import React from 'react';
 
-const DoctorItem = ({image, fullname, onPress, speciality, image2}) => {
+const DoctorItem = ({image, fullname, onPress, speciality, image2, fees}) => {
   return (
     <TouchableOpacity style={styles.itemContainer} onPress={onPress}>
-      
       <Image style={styles.image} source={image} />
       <View style={styles.description}>
         <Text style={styles.name}>{fullname}</Text>
         <Text style={styles.speciality}>{speciality}</Text>
-    
+        <Text style={styles.fees}>
+          Fees <Text style={{color: '#3f5092'}}>{fees} $</Text>
+        </Text>
       </View>
-        <Image source={image2} style={{position:'absolute', right:0, margin:20}}/>
-        </TouchableOpacity>
-  
+      <Image
+        source={image2}
+        style={{
+          position: 'absolute',
+          right: 0,
+          margin: 20,
+          height: 40,
+          width: 40,
+        }}
+      />
+    </TouchableOpacity>
   );
 };
 const styles = StyleSheet.create({
   itemContainer: {
-    flexDirection:'row',
+    flexDirection: 'row',
     //   alignItems: 'flex-start',
     padding: 15,
-    borderRadius:15,
-  
-    backgroundColor:'white',
-    shadowColor: "gray",
+    borderRadius: 15,
+
+    backgroundColor: 'white',
+    shadowColor: 'gray',
     shadowOffset: {
       width: 0,
       height: 2,
     },
-    shadowOpacity:  0.17,
+    shadowOpacity: 0.17,
     shadowRadius: 3.05,
-    elevation: 5
-   
-    
+    elevation: 5,
   },
 
   description: {
     paddingLeft: 15,
-    // justifyContent: 'space-between'
-    // flexDirection:'row',
-    // alignItems: 'flex-end'
   },
   image: {
     width: 80,
@@ -60,6 +64,11 @@ const styles = StyleSheet.create({
     color: 'gray',
     textTransform: 'capitalize',
     marginTop: 15,
+  },
+  fees: {
+    paddingTop: 5,
+    fontWeight: 'bold',
+    color: '#f57687',
   },
 });
 
