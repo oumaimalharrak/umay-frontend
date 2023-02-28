@@ -7,6 +7,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import moment from 'moment';
 import DropDown from '../components/DropDown';
 import Custumbutton from '../components/Custumbutton';
+import { ScrollView } from 'react-native-gesture-handler';
 
 
 const format = 'YYYY-MM-DD';
@@ -129,7 +130,9 @@ const CalendarScreen = () => {
   };
 
   return (
+    <ScrollView>
     <View style={styles.container}>
+      <Text style={styles.selectText} >Select your Cycle Length:</Text>
       <DropDown
         onChange={item => {
           setValue(item.label);
@@ -180,6 +183,7 @@ const CalendarScreen = () => {
       { show && <Rows/>}
    
     </View>
+    </ScrollView>
   );
 };
 
@@ -213,6 +217,13 @@ const styles = StyleSheet.create({
   
    
     // lineHeight:1
+  },
+  selectText:{
+    fontSize: 14,
+    fontWeight: "700",
+    color: '#3f5092',
+    fontFamily: 'Outfit-Medium',
+    // marginTop:12
   },
   dates: {
     fontWeight:'bold'

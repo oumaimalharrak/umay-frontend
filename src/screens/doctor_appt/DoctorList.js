@@ -12,6 +12,7 @@ import DoctorItem from '../../components/DoctorItem';
 import docIcon from '../../assets/images/doc.png';
 import {TextInput} from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
+import Header from '../../components/Header';
 
 
 const DoctorList = () => {
@@ -22,10 +23,14 @@ const DoctorList = () => {
   const [filteredData, setFilteredData] = useState(data);
   const [selectedDoctorId, setSelectedDoctorId] = useState(null);
 
-  const handleDoctorPress = ({id, item}) => {
-    console.log(id);
-    setSelectedDoctorId(id);
+  const handleDoctorPress = (item) => {
+    // console.log('the id is',item.id);
+    setSelectedDoctorId(item.id);
+    navigation.navigate('bookingScreen', item)
+
   };
+
+
 
   const handleSearch = text => {
     setSearchTerm(text);
@@ -47,6 +52,7 @@ const DoctorList = () => {
   // };
   return (
     <View>
+
       <View style={styles.searchcontainer}>
         <TextInput
           style={styles.searchBar}
@@ -72,10 +78,11 @@ const DoctorList = () => {
                 image={docIcon}
                 fullname={item.fullname}
                 speciality={item.speciality}
-                fees={item.price}
-                onPress={() => {handleDoctorPress(item.id)
-                  navigation.navigate('bookingScreen', item)
-
+                fees={` ${item.price} $`}
+                feesText='Fees'
+                onPress={() => {
+                  handleDoctorPress(item)
+                  // navigation.navigate('bookingScreen', item)
                 }}
                 image2={require('../../assets/images/calendar.png')}
 

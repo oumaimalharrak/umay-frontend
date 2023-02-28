@@ -48,6 +48,10 @@ const styles = StyleSheet.create({
   btnContainer_TERTIARY:{
     marginVertical: 10
   },
+  btnContainer_BOOKING:{
+    width:350,
+    borderRadius:15
+  },
  text:{
   color: 'white',
   fontSize: 20,

@@ -39,7 +39,7 @@ const DropDown = ({onChange, onChangeText}) => {
         maxHeight={300}
         labelField="label"
         valueField="value"
-        placeholder="Select your Cycle Length : "
+        placeholder="Cycle Length : "
         value={value}
         onChange={onChange}
       />
@@ -62,8 +62,8 @@ const styles = StyleSheet.create({
     
   },
   placeholderStyle: {
-    fontSize: 14,
-    fontWeight: "700",
+    fontSize: 12,
+    // fontWeight: "700",
     color: '#3f5092',
     fontFamily: 'Outfit-Medium',
 

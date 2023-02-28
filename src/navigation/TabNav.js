@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screens/HomeScreen';
 import CalendarScreen from '../screens/CalendarScreen';
 import Ionicons from 'react-native-vector-icons/Ionicons'
+import DoctorList from '../screens/doctor_appt/DoctorList';
 
 
 
@@ -24,7 +25,7 @@ const TabNav = () => {
           )
         
     }} />
-    <Tab.Screen name='HomeTab' component={HomeScreen} />
+    <Tab.Screen name='doctorList' component={DoctorList} />
 
    </Tab.Navigator>
   )

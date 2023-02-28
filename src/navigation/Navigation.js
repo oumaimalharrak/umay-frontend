@@ -25,16 +25,16 @@ const Navigation = () => {
     <QueryClientProvider client={queryClient} >
       <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
-        {/* <Stack.Screen name="Home" component={HomeScreen} />  */}
-         {/* <Stack.Screen name='Login' component={LoginScreen}/> */}
-        {/* <Stack.Screen name='Index' component={Index}/> */}
-         {/* <Stack.Screen name='SignUp' component={SignUpScreen}/>  */}
-        {/* <Stack.Screen name="Confirmation" component={ConfirmationScreen} /> */}
-        {/* <Stack.Screen name='ForgotPWD' component={ForgotPwdScreen}/> */}
-        {/* <Stack.Screen name='newPWD' component={NewPwdScreen}/>  */}
-        {/* <Stack.Screen name='calendar' component={TabNav} />  */}
-         <Stack.Screen name='doctorList' component={DoctorList}/>
-         <Stack.Screen name='bookingScreen' component={Bookingscreen}/>
+         <Stack.Screen name="Home" component={HomeScreen} />  
+         <Stack.Screen name='Login' component={LoginScreen}/>
+        <Stack.Screen name='Index' component={Index}/>
+         <Stack.Screen name='SignUp' component={SignUpScreen}/> 
+        <Stack.Screen name="Confirmation" component={ConfirmationScreen} />
+        <Stack.Screen name='ForgotPWD' component={ForgotPwdScreen}/>
+        <Stack.Screen name='newPWD' component={NewPwdScreen}/> 
+         <Stack.Screen name='calendar' component={TabNav} /> 
+         <Stack.Screen name='doctorList' component={DoctorList}/> 
+        <Stack.Screen name='bookingScreen' component={Bookingscreen}/>
  
       </Stack.Navigator>
     

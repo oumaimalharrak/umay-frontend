@@ -1,15 +1,16 @@
 import {View, Text, TouchableOpacity, StyleSheet, Image} from 'react-native';
 import React from 'react';
 
-const DoctorItem = ({image, fullname, onPress, speciality, image2, fees}) => {
+const DoctorItem = ({image, fullname, onPress, speciality, image2, fees, adresse, feesText, itemHeight}) => {
   return (
-    <TouchableOpacity style={styles.itemContainer} onPress={onPress}>
+    <TouchableOpacity style={[styles.itemContainer, itemHeight ?{height :itemHeight} :{}]} onPress={onPress}>
       <Image style={styles.image} source={image} />
       <View style={styles.description}>
         <Text style={styles.name}>{fullname}</Text>
-        <Text style={styles.speciality}>{speciality}</Text>
+        <Text style={styles.speciality}>{speciality} <Text >{adresse}</Text></Text>
+      
         <Text style={styles.fees}>
-          Fees <Text style={{color: '#3f5092'}}>{fees} $</Text>
+         {feesText}  <Text style={{color: '#3f5092'}}>{fees} </Text>
         </Text>
       </View>
       <Image
@@ -28,10 +29,12 @@ const DoctorItem = ({image, fullname, onPress, speciality, image2, fees}) => {
 const styles = StyleSheet.create({
   itemContainer: {
     flexDirection: 'row',
-    //   alignItems: 'flex-start',
+      alignItems: 'center',
+ 
     padding: 15,
     borderRadius: 15,
-
+    width:'100%',
+    // height:'70%',
     backgroundColor: 'white',
     shadowColor: 'gray',
     shadowOffset: {

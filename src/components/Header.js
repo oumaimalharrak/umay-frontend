@@ -1,39 +1,21 @@
-import { View, Text, Image, StyleSheet, useWindowDimensions } from 'react-native'
+import { View, StyleSheet,  } from 'react-native'
 import React from 'react'
-import Logo from '../assets/umay-logo.png'
+import AntDesign from 'react-native-vector-icons/AntDesign'
 
-const Header = () => {
-    const {height} = useWindowDimensions();
+const Header = ({onPress}) => {
   return (
-    <View  >
-      <Image source={Logo} resizeMode= 'center' style={styles.logoHeadear}  />
-      <Image source={Logo} resizeMode= 'center' style={styles.logoHeadear}  />
+    <View style={styles.container} >
+      <AntDesign name='left' size={25} color='gray' onPress={onPress} />
     </View>
   )
 }
 
 
  const styles = StyleSheet.create({
-    container:{
-        flexDirection: 'row',
-        alignItems: 'center',
-        // height: 800
-        
-    },
-    logoHeadear:{
-        width: 100,
-        // maxWidth: 300,
-        // maxHeight: 200,
-        // marginBottom: 70,
-        // flex:3,
-        // justifyContent: 'center',
-        // alignItems: 'center',
-        // position: 'absolute',
-        // top: 0,
-        // alignItems: 'flex-start',
-        height: 100,
-        backgroundColor: 'blue'
 
-    }
+  container:{
+    // backgroundColor:'green',
+    padding:20
+  }
  })
 export default Header
